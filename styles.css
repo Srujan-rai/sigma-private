@@ -134,7 +134,7 @@ video {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.5);
+  background:transparent;
   z-index: 1000;
 }
 
