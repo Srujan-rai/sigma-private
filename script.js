@@ -1,4 +1,4 @@
-const typingText = "Sahyadri Intelligent Gallant Mascots Artificial Intelligence";
+const typingText = "Sahyadri Intelligent Gallant Mascots of Artificial Intelligence";
 const typingElement = document.querySelector(".typing-animation");
 
 let index = 0;
@@ -12,10 +12,9 @@ function typeText() {
       currentText += typingText[index];
       typingElement.textContent = currentText;
       index++;
-      setTimeout(typeText, 100); // Adjust typing speed here
+      setTimeout(typeText, 100); 
     } else {
-      // Once typing is done, start backspacing after a short delay
-      setTimeout(backspaceText, 1000); // Wait before starting backspace
+      setTimeout(backspaceText, 1000);
     }
   }
 }
