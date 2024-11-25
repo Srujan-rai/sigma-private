@@ -5,7 +5,6 @@ let index = 0;
 let isTyping = true;
 let currentText = "";
 
-// Function to type the text
 function typeText() {
   if (isTyping) {
     if (index < typingText.length) {
@@ -19,19 +18,16 @@ function typeText() {
   }
 }
 
-// Function to backspace the text
 function backspaceText() {
   if (index > 0) {
-    currentText = currentText.slice(0, -1); // Remove last character
+    currentText = currentText.slice(0, -1);
     typingElement.textContent = currentText;
     index--;
-    setTimeout(backspaceText, 80); // Adjust backspacing speed here
+    setTimeout(backspaceText, 80);
   } else {
-    // Once backspacing is done, start typing again after a short delay
-    setTimeout(typeText, 500); // Wait before starting typing again
+    setTimeout(typeText, 500); 
   }
 }
 
-// Start typing when the page loads
 document.addEventListener("DOMContentLoaded", typeText);
 

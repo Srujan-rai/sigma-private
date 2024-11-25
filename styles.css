@@ -140,7 +140,7 @@ video {
 }
 
 .photo-card {
-  background: rgba(0, 0, 0, 0.8); /* Transparent card background */
+  background: rgba(0, 0, 0, 0.8); 
   padding: 20px;
   border-radius: 10px;
   text-align: center;
