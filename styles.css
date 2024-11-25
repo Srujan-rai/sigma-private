@@ -1,4 +1,4 @@
-/* General reset */
+
 @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 
 * {
@@ -10,10 +10,10 @@
 body {
   font-family: "Parkinsans", serif;
   color: white;
-  overflow-x: hidden; /* Allow vertical scrolling but prevent horizontal scrolling */
+  overflow-x: hidden;
 }
 
-/* Video container */
+
 .video-container {
   position: relative;
   width: 100%;
@@ -24,10 +24,10 @@ body {
 video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Prevent zoom and distortion */
+  object-fit: cover; 
 }
 
-/* Center content styling */
+
 .center-content {
   position: absolute;
   top: 50%;
@@ -47,7 +47,7 @@ video {
 }
 
 /* Navbar */
-/* Navbar */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -57,9 +57,9 @@ video {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.5); /* Transparent background */
+  background: rgba(0, 0, 0, 0.5); 
   z-index: 1000;
-  white-space: nowrap; /* Prevent elements from wrapping to a new line */
+  white-space: nowrap;
   overflow: hidden;
 }
 
@@ -72,38 +72,36 @@ video {
   text-decoration: none;
   color: white;
   margin: 0 5px;
-  font-size: 0.9rem; /* Adjust font size for smaller screens */
+  font-size: 0.9rem; 
 }
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .navbar {
-    padding: 8px 15px; /* Reduce padding to save space */
+    padding: 8px 15px; 
   }
 
   .navbar .nav-links a {
-    font-size: 0.8rem; /* Smaller font size for small screens */
+    font-size: 0.8rem; 
     margin: 0 3px;
   }
 
   .logo-container .logo {
-    width: 100px; /* Reduce logo size */
+    width: 100px; 
   }
 }
 
-/* Photo Gallery */
 .photo-gallery {
   position: relative;
   padding: 50px 20px;
-  background: transparent; /* Keeps the background same or transparent */
+  background: transparent; 
   text-align: center;
-  text-decoration: none; /* Removes underline */
+  text-decoration: none;
   border: none;
 
 }
 .photo-gallery a {
-  text-decoration: none; /* Removes underline */
-  border: none; /* Removes any border */
+  text-decoration: none; 
+  border: none; 
 }
 
 
@@ -114,7 +112,7 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; /* Position the video behind the content */
+  z-index: -1; 
 }
 
 .gallery-heading {
@@ -176,7 +174,6 @@ video {
   color: #ccc;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .photo-card {
     width: 200px;
