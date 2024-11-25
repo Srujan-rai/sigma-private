@@ -9,27 +9,22 @@
 
 body {
   font-family: "Parkinsans", serif;
-  overflow: hidden;
   color: white;
+  overflow-x: hidden; /* Allow vertical scrolling but prevent horizontal scrolling */
 }
 
 /* Video container */
 .video-container {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
 }
 
 video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  object-fit: cover; /* Prevent zoom and distortion */
 }
 
 /* Center content styling */
@@ -39,44 +34,19 @@ video {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.center-content .logo {
-  width: 200px;
-  height: auto;
+.logo-container .logo {
+  width: 150px;
   margin-bottom: 20px;
-}
-
-.center-content .sigma-text {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
 }
 
 .typing-animation {
   font-size: 1.5rem;
-  font-weight: 300;
   font-family: "Courier New", Courier, monospace;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  min-width: 50%;
-  max-width: 100%;
-  height: 1.5em; /* Set a fixed height */
-  line-height: 1.5em; /* Match line-height to the font-size */
 }
-/* Navbar styles */
+
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -86,52 +56,126 @@ video {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.5); /* Transparent background */
   z-index: 1000;
-}
-
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.navbar .nav-links {
-  display: flex;
-  gap: 20px;
 }
 
 .navbar .nav-links a {
   text-decoration: none;
   color: white;
-  font-size: 1rem;
-  transition: color 0.3s;
+  margin: 0 10px;
 }
 
-.navbar .nav-links a:hover {
+/* Photo Gallery */
+.photo-gallery {
+  position: relative;
+  padding: 50px 20px;
+  background: transparent; /* Keeps the background same or transparent */
+  text-align: center;
+}
+
+.photo-gallery video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Position the video behind the content */
+}
+
+.gallery-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.gallery-section {
+  margin-bottom: 40px;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
   color: #ffcc00;
 }
 
-/* Media queries for responsiveness */
+.photo-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.photo-card {
+  background: rgba(0, 0, 0, 0.7); /* Transparent card background */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.photo-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.photo-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.photo-designation {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ccc;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .center-content .sigma-text {
+  .photo-card {
+    width: 200px;
+  }
+
+  .gallery-heading {
     font-size: 2rem;
   }
-  .center-content .logo {
-    width: 120px;
-  }
-  .navbar .logo {
-    font-size: 1.2rem;
+
+  .section-heading {
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .center-content .sigma-text {
-    font-size: 1.5rem;
+  .photo-card {
+    width: 150px;
+    padding: 15px;
   }
-  .center-content .logo {
-    width: 100px;
+
+  .gallery-heading {
+    font-size: 1.8rem;
   }
-  .navbar .logo {
+
+  .section-heading {
+    font-size: 1.2rem;
+  }
+
+  .photo-name {
     font-size: 1rem;
+  }
+
+  .photo-designation {
+    font-size: 0.9rem;
   }
 }
