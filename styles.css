@@ -1,4 +1,6 @@
 /* General reset */
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +8,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Parkinsans", serif;
   overflow: hidden;
   color: white;
 }
@@ -38,7 +40,6 @@ video {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,23 +49,21 @@ video {
 .logo-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .center-content .logo {
-  width: 150px; /* Adjust as needed */
+  width: 200px;
   height: auto;
   margin-bottom: 20px;
 }
 
 .center-content .sigma-text {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-/* General styling for the typing animation without cursor */
 .typing-animation {
   font-size: 1.5rem;
   font-weight: 300;
@@ -72,58 +71,11 @@ video {
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-  min-width: 50%; /* Ensures it takes up at least 50% of the screen */
-  max-width: 100%; /* Ensures text doesn't overflow */
-  animation: typing 3s steps(40) 1s 1 normal forwards; /* Smooth typing animation */
+  min-width: 50%;
+  max-width: 100%;
+  height: 1.5em; /* Set a fixed height */
+  line-height: 1.5em; /* Match line-height to the font-size */
 }
-
-/* Smooth typing animation */
-@keyframes typing {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 1024px) {
-  .typing-animation {
-    font-size: 1.2rem; /* Reduce font size on medium screens */
-    min-width: 60%; /* Allow text to take up more space */
-  }
-}
-
-@media (max-width: 768px) {
-  .typing-animation {
-    font-size: 1rem; /* Smaller font size for tablets */
-    min-width: 80%; /* Allow text to take up more space */
-    white-space: normal; /* Allow text to wrap to new lines */
-  }
-
-  .navbar .nav-links {
-    display: none; /* Hide nav links by default on mobile */
-  }
-
-  .navbar.open .nav-links {
-    display: flex; /* Show nav links when the menu is open */
-  }
-
-  .navbar.open .dropdown-menu {
-    display: none; /* Hide dropdown menu when nav links are open */
-  }
-}
-
-@media (max-width: 480px) {
-  .typing-animation {
-    font-size: 0.9rem; /* Even smaller font size for mobile */
-    min-width: 90%; /* Text takes full width */
-    white-space: normal; /* Allow text to wrap */
-    text-align: center; /* Center the text */
-  }
-}
-
 /* Navbar styles */
 .navbar {
   position: fixed;
@@ -134,13 +86,12 @@ video {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background:transparent;
+  background: transparent;
   z-index: 1000;
 }
 
 .navbar .logo {
   font-size: 1.5rem;
-  color: white;
   font-weight: bold;
 }
 
@@ -160,70 +111,27 @@ video {
   color: #ffcc00;
 }
 
-/* Responsive styling for hamburger menu */
-.hamburger-menu {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger-menu div {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-}
-
-.dropdown-menu {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 5px;
-  z-index: 999;
-}
-
-.dropdown-menu a {
-  padding: 10px 20px;
-  text-decoration: none;
-  color: white;
-}
-
-.dropdown-menu a:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
+  .center-content .sigma-text {
+    font-size: 2rem;
   }
-
-  .hamburger-menu {
-    display: flex;
+  .center-content .logo {
+    width: 120px;
   }
-
-  .dropdown-menu {
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.8);
-  }
-
-  /* Adjust navbar logo and links for mobile view */
   .navbar .logo {
     font-size: 1.2rem;
   }
 }
 
-/* Responsive adjustments for mobile view */
 @media (max-width: 480px) {
-  .navbar .logo {
-    font-size: 1rem; /* Further reduce logo size on mobile */
+  .center-content .sigma-text {
+    font-size: 1.5rem;
   }
-
-  .navbar .nav-links a {
-    font-size: 0.9rem; /* Smaller links for mobile */
+  .center-content .logo {
+    width: 100px;
+  }
+  .navbar .logo {
+    font-size: 1rem;
   }
 }
