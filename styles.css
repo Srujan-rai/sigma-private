@@ -47,6 +47,7 @@ video {
 }
 
 /* Navbar */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -58,12 +59,36 @@ video {
   padding: 10px 20px;
   background: rgba(0, 0, 0, 0.5); /* Transparent background */
   z-index: 1000;
+  white-space: nowrap; /* Prevent elements from wrapping to a new line */
+  overflow: hidden;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 10px;
 }
 
 .navbar .nav-links a {
   text-decoration: none;
   color: white;
-  margin: 0 10px;
+  margin: 0 5px;
+  font-size: 0.9rem; /* Adjust font size for smaller screens */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 15px; /* Reduce padding to save space */
+  }
+
+  .navbar .nav-links a {
+    font-size: 0.8rem; /* Smaller font size for small screens */
+    margin: 0 3px;
+  }
+
+  .logo-container .logo {
+    width: 100px; /* Reduce logo size */
+  }
 }
 
 /* Photo Gallery */
