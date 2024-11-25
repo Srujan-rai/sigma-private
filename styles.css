@@ -97,7 +97,15 @@ video {
   padding: 50px 20px;
   background: transparent; /* Keeps the background same or transparent */
   text-align: center;
+  text-decoration: none; /* Removes underline */
+  border: none;
+
 }
+.photo-gallery a {
+  text-decoration: none; /* Removes underline */
+  border: none; /* Removes any border */
+}
+
 
 .photo-gallery video {
   position: absolute;
@@ -134,12 +142,12 @@ video {
 }
 
 .photo-card {
-  background: rgba(0, 0, 0, 0.7); /* Transparent card background */
+  background: rgba(0, 0, 0, 0.8); /* Transparent card background */
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   width: 250px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: transparent;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -159,6 +167,7 @@ video {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 5px;
+  color: rgb(143, 143, 202);
 }
 
 .photo-designation {
