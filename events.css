@@ -1,0 +1,233 @@
+.gallery-section {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    font-family: "Parkinsans", serif;
+    color: white;
+  }
+  
+  .photo-gallery {
+    position: relative;
+    padding: 50px 20px;
+    background: transparent;
+    text-align: center;
+    min-height: 100vh;
+  }
+  
+  .photo-gallery a {
+    text-decoration: none;
+    border: none;
+  }
+  
+  .photo-gallery video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .gallery-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+   
+    color: #ffcc00;
+  }
+  
+  .gallery-section {
+    margin-bottom: 40px;
+  }
+  
+  .event-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .event-card {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+
+  }
+  
+  .photo {
+    width: 100%;
+    height: 75%;
+    border-radius: 8px;
+    transition: 1s all;
+    
+  }
+  
+  .img-event {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+  }
+  
+  .event-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: rgb(143, 143, 202);
+    transition: 1.2s all;
+    font-family: "Parkinsans", serif;
+  }
+  
+  .event-info {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #ccc;
+    margin-bottom: 10px;
+    transition: 1.2s all;
+    font-family: "Parkinsans", serif;
+  }
+  
+  .event-description {
+    text-align: center;
+    position: relative;
+    top: 10px;
+    width: 100%;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.336);
+    border-radius: 10px;
+    color: white;
+    transition: 1.2s all;
+    font-family: "Parkinsans", serif;
+  }
+  
+  .event-description span {
+    visibility: hidden;
+    opacity: 0;
+    text-align: justify;
+    transition: 1s all;
+  }
+  
+  .event-card:hover .event-description {
+    
+    top: -150px;
+  }
+  
+  .event-card:hover .event-description span {
+    visibility: visible;
+    opacity: 1;
+  }
+  .event-card:hover .event-name{
+   
+    font-size: xx-large;
+  }
+  .event-card:hover .photo{
+    filter: blur(0.5rem);
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+  }
+  
+  .navbar .logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+  }
+  
+  /* Media Queries 
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 8px 15px;
+    }
+  
+    .navbar .nav-links a {
+      font-size: 0.8rem;
+    }
+  
+    .event-card {
+      width: 90%;
+      height: 250px;
+    }
+    
+    .event-description span {
+      font-size: 0.9rem;
+    }
+  }*/
+   
+  @media (max-width: 600px) {
+    .gallery-heading {
+      font-size: 2rem;
+    }
+  
+    .event-card {
+      
+      height: 300px;
+    }
+  
+    .event-description span {
+      font-size: 0.8rem;
+    }
+  }
+ 
+  @media (max-width: 400px) {
+    .gallery-heading {
+      font-size: 1.8rem;
+    }
+  
+    .event-card {
+      
+      height: 250px;
+    }
+  
+    .event-description span {
+      font-size: 0.7rem;
+    }
+    .event-info {
+   
+        margin-bottom: 0px;
+      }
+  }
+  
