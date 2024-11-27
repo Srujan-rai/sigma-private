@@ -37,13 +37,13 @@ video {
 }
 
 .logo-container .logo {
-  width: 150px;
-  margin-bottom: 20px;
+  width: 300px;
+  margin-bottom: 40px;
 }
 
 .typing-animation {
-  font-size: 1.5rem;
-  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+  font-family: "Parkinsans", serif;
 }
 
 /* Navbar */
@@ -113,6 +113,11 @@ video {
   height: 100%;
   object-fit: cover;
   z-index: -1; 
+}
+.photo-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.9); /* Slightly darker background on hover */
 }
 
 .gallery-heading {
