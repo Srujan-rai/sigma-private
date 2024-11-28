@@ -27,7 +27,8 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            padding: 20px;
+            align-items: center;
+            padding: 15px;
             z-index: 10;
             background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
         }
@@ -39,10 +40,15 @@
             font-weight: bold;
         }
 
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
         .nav-links a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 15px;
             transition: color 0.3s ease;
         }
 
@@ -74,14 +80,14 @@
 
         .page-wrapper {
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
         .fixed-heading {
             position: fixed;
-            top: 80px;
+            top: 70px;
             left: 0;
             width: 100%;
             text-align: center;
@@ -89,7 +95,7 @@
         }
 
         .gallery-heading {
-            font-size: 3rem;
+            font-size: 2.5rem;
             text-shadow: 0 4px 6px rgba(0,0,0,0.5);
         }
 
@@ -98,14 +104,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            padding-top: 150px;
+            min-height: 100vh;
+            padding: 150px 15px 50px;
         }
 
         .achievements-carousel {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             width: 100%;
             max-width: 1200px;
             position: relative;
@@ -118,8 +121,8 @@
             background: rgba(255,255,255,0.2);
             color: white;
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -134,43 +137,46 @@
         }
 
         .carousel-control.prev {
-            left: -70px;
+            left: 10px;
         }
 
         .carousel-control.next {
-            right: -70px;
+            right: 10px;
         }
 
         .carousel-item {
             display: none;
             width: 100%;
-            max-width: 900px;
             opacity: 0;
             transition: opacity 0.5s ease;
         }
 
         .carousel-item.active {
-            display: flex;
+            display: block;
             opacity: 1;
         }
 
         .photo-row {
             display: flex;
+            flex-direction: column;
             align-items: center;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             backdrop-filter: blur(10px);
+            max-width: 100%;
+            margin: 0 auto;
         }
 
         .photo-card {
-            width: 250px;
+            width: 100%;
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center;
         }
 
         .photo-card img {
@@ -182,20 +188,73 @@
         }
 
         .text-card {
-            padding: 30px;
-            flex-grow: 1;
-            text-align: left;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
         }
 
         .photo-name {
             font-weight: bold;
             margin-bottom: 10px;
-            text-align: center;
         }
 
         .photo-designation {
             color: #e0e0e0;
             line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                padding: 10px 15px;
+            }
+
+            .nav-links a {
+                margin-left: 10px;
+                font-size: 0.9rem;
+            }
+
+            .gallery-heading {
+                font-size: 2rem;
+            }
+
+            .center-content {
+                padding: 120px 10px 30px;
+            }
+
+            .photo-row {
+                flex-direction: column;
+                width: 100%;
+                max-width: 95%;
+            }
+
+            .photo-card, .text-card {
+                width: 100%;
+            }
+
+            .carousel-control {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .gallery-heading {
+                font-size: 1.5rem;
+            }
+
+            .photo-card img {
+                max-width: 150px;
+                max-height: 150px;
+            }
+
+            .photo-name {
+                font-size: 1rem;
+            }
+
+            .photo-designation {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
