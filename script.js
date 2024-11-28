@@ -1,4 +1,4 @@
-const typingText = "Sahyadri Intellectual And Gallant Mascots of AI";
+const typingText = "Sahyadri Intellectual and Gallant Mascots of AI";
 const typingElement = document.querySelector(".typing-animation");
 
 let index = 0;
