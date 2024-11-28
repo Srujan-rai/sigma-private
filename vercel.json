@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      { "source": "/faculty", "destination": "/faculty.html" },
+      { "source": "/achievements", "destination": "/achievements.html" },
+      { "source": "/events", "destination": "/events.html" },
+      { "source": "/", "destination": "/index.html" }
+    ]
+  }
+  

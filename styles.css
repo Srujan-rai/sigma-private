@@ -36,6 +36,11 @@ video {
   text-align: center;
 }
 
+.navbar .logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+}
 .logo-container .logo {
   width: 300px;
   margin-bottom: 40px;
