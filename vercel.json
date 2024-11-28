@@ -1,9 +1,11 @@
 {
+    "redirects": [
+      { "source": "/index.html", "destination": "/", "permanent": true }
+    ],
     "rewrites": [
       { "source": "/faculty", "destination": "/faculty.html" },
       { "source": "/achievements", "destination": "/achievements.html" },
-      { "source": "/events", "destination": "/events.html" },
-      { "source": "/", "destination": "/index.html" }
+      { "source": "/events", "destination": "/events.html" }
     ]
   }
   
