@@ -122,13 +122,18 @@
     color: white;
     transition: 1.2s all;
     font-family: "Parkinsans", serif;
-  }
+
+}
   
   .event-description span {
     visibility: hidden;
     opacity: 0;
     text-align: justify;
     transition: 1s all;
+    overflow-y: auto;
+    height: 100%;
+    scrollbar-width: thin; 
+    scrollbar-color: #ccc transparent;
   }
   
   .event-card:hover .event-description {

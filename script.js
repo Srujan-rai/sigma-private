@@ -1,9 +1,11 @@
 const typingText = "Sahyadri Intellectual And Gallant Mascots of AI";
 const typingElement = document.querySelector(".typing-animation");
 
+
 let index = 0;
 let isTyping = true;
 let currentText = "";
+
 
 function typeText() {
   if (isTyping) {
