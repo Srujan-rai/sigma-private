@@ -1,16 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGMA - Achievements</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="achievements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Parkinsans", serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            z-index: 10;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+        }
+
+        .navbar .logo a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00b4d8;
+        }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-container video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            object-fit: cover;
+        }
+
+        .page-wrapper {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fixed-heading {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 5;
+        }
+
+        .gallery-heading {
+            font-size: 3rem;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.5);
+        }
+
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding-top: 150px;
+        }
+
+        .achievements-carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-control:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        .carousel-control.prev {
+            left: -70px;
+        }
+
+        .carousel-control.next {
+            right: -70px;
+        }
+
+        .carousel-item {
+            display: none;
+            width: 100%;
+            max-width: 900px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .carousel-item.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .photo-row {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .photo-card {
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-card img {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .text-card {
+            padding: 30px;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .photo-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .photo-designation {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+    </style>
 </head>
-
 <body>
-
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo"><a href="/">SIGMA</a></div>
@@ -18,7 +207,6 @@
             <a href="/faculty">Faculty</a>
             <a href="/achievements">Achievements</a>
             <a href="/events">Events</a>
-
         </div>
     </nav>
 
@@ -27,33 +215,100 @@
             <source src="assets/bc-1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <section class="center-content">
+    </section>
+
+    <div class="page-wrapper">
+        <div class="fixed-heading">
             <h2 class="gallery-heading">Achievements</h2>
-            <!-- Sinchana Award Section -->
-            <div class="gallery-section">
-                <h3 class="section-heading"></h3>
-                <div class="photo-row">
-                    <div class="photo-card">
-                        <a href="https://www.linkedin.com/posts/cse-aiml_the-department-of-cseartificial-intelligence-activity-7263939439729479680-QNJY?utm_source=li_share&utm_content=feedcontent&utm_medium=g_dt_web&utm_campaign=copy"
-                            target="_blank">
+        </div>
+
+        <section class="center-content">
+            <div class="achievements-carousel" id="achievementsCarousel">
+                <!-- Sinchana Achievement -->
+                <div class="carousel-item active">
+                    <button class="carousel-control prev" onclick="changeSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="photo-row">
+                        <div class="photo-card">
                             <img src="assets/sinchana_logo.png" alt="Sinchana" class="photo">
                             <p class="photo-name">Overall Champions</p>
-                            <p class="photo-designation"></p>
-                        </a>
+                        </div>
+                        <div class="text-card">
+                            <p class="photo-name">Sinchana 2K24</p>
+                            <p class="photo-designation">The Department of CSE(Artificial Intelligence and Machine Learning) emerged as the Overall Champions during Sinchana-2k24 an Inter Departmental cultural extravaganza held at Sahyadri College of Engineering & Management for showcasing the cultural and traditional talents of young minds.</p>
+                        </div>
                     </div>
-                    <div class="text-card">
-                        <p class="photo-name">Sinchana 2K24</p>
-                        <p class="photo-designation">The Department of CSE(Artificial Intelligence and Machine Learning)
-                            of emerged as the Overall Champions during Sinchana-2k24 an Inter Departmental cultural
-                            extravaganza held at Sahyadri College of Engineering & Management for showcasing the
-                            cultural and traditional talents of young minds. </p>
-                    </div>
+                    <button class="carousel-control next" onclick="changeSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
 
+                <!-- Dummy Achievement 1 -->
+                <div class="carousel-item">
+                    <button class="carousel-control prev" onclick="changeSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="photo-row">
+                        <div class="photo-card">
+                            <img src="assets/eventImg/image.png" alt="Hackathon" class="photo">
+                            <p class="photo-name">9 VTU Ranks</p>
+                        </div>
+                        <div class="text-card">
+                            <p class="photo-name">VTU Ranks</p>
+                            <p class="photo-designation">Our AI/ML team secured the 9th rank in VTU engineering, showcasing outstanding academic excellence, innovative thinking, and a commitment to pushing the boundaries of technology.</p>
+                        </div>
+                    </div>
+                    <button class="carousel-control next" onclick="changeSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Dummy Achievement 2 -->
+                <div class="carousel-item">
+                    <button class="carousel-control prev" onclick="changeSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="photo-row">
+                        <div class="photo-card">
+                            <img src="assets/eventImg/Photo.JPEG" alt="Research Award" class="photo">
+                            <p class="photo-name">34 LPA Milestone</p>
+                        </div>
+                        <div class="text-card">
+                            <p class="photo-name">34 LPA Milestone</p>
+                            <p class="photo-designation">Zeliq Zayyan achieved an extraordinary milestone by securing a 34 LPA package, a testament to his unwavering perseverance, relentless hard work, and exceptional skills. His accomplishment reflects his dedication and stands as an inspiration to everyone in our department.</p>
+                        </div>
+                    </div>
+                    <button class="carousel-control next" onclick="changeSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
-
         </section>
-    </section>
-</body>
+    </div>
 
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+
+        function changeSlide(direction) {
+            // Remove active class from current slide
+            slides[currentSlide].classList.remove('active');
+
+            // Update current slide index
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+
+            // Add active class to new slide
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Auto-slide functionality
+        function autoChangeSlide() {
+            changeSlide(1);
+        }
+
+        // Start auto-sliding every 3 seconds
+        setInterval(autoChangeSlide, 3000);
+    </script>
+</body>
 </html>
